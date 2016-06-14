@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Info</title>
+</head>
+<body>
+<h1>Info</h1>
+<h2>The Go Engine</h2>
+<p>
+- Built for a Go AI competition<br>
+- Written in Golang<br>
+- Engine will pass arguments to AI then wait for a response<br>
+<br>
+Build 0.0.2<br>
+Coded by Kai Ergin<br>
+<br>
+Rules and Info:<br>
+AI has 60 seconds to make a move. If no move is made, AI automatically loses.<br>
+If an illegal move is made, engine will ask AI again for a correct move.<br>
+If 3 illegal moves are returned, AI automatically loses.<br>
+<br>
+Note: Suicide IS recognized as a legal move.<br>
+<br>
+Go AI MUST be written in Go.<br>
+For building the AI, moves can be typed out against your AI if debug = True.<br>
+When debug is on, board will be printed after each move.<br>
+To make a move, wait for input and type cordinates of move separated by a space.<br>
+To turn time off make time = False.<br>
+AI func to return a move should be called "returnMove". This will be the function the engine calls.<br>
+This function will receive one argument, [][]int, the board.<br>
+This function should return []int containing the coordinates of the move made.<br>
+To pass, the AI should return []int{-1,-1}.<br>
+<br>
+Go rules can be found <a href="http://www.britgo.org/intro/intro2.html">here</a>.<br>
+In end game, dead/hopeless strings WILL cause territory to become neutral.<br>
+- This will hopefully be changed/fixed in a later build.<br>
+Game will be played on a 19x19 board.<br>
+<br>
+To run engine with your AI, type "go run engine.go NAME-OF-AI.go" .<br>
+Your AI should NOT have a main function. Only a returnMove function.<br>
+You can change the engine if you would like but only your AI will be submitted.<br>
+A slightly different engine will be used for the competition that can run two AIs.<br>
+<br>
+Good luck!
+</p>
+</body>
+</html>

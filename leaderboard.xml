@@ -1,0 +1,17 @@
+<board>
+	<player>
+		<name>Kai</name>
+		<rank>1</rank>
+		<elo>1000</elo>
+	</player>
+	<player>
+		<name>Robbie</name>
+		<rank>2</rank>
+		<elo>950</elo>
+	</player>
+	<player>
+		<name>Kevin</name>
+		<rank>3</rank>
+		<elo>880</elo>
+	</player>
+</board>

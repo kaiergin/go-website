@@ -1,0 +1,16 @@
+<all>
+	<game>
+		<playerone>Kai</playerone>
+		<playertwo>Robbie</playertwo>
+		<winner>Robbie</winner>
+		<turns>50</turns>
+		<date>6/2/2016</date>
+	</game>
+	<game>
+		<playerone>Kevin</playerone>
+		<playertwo>Timmy</playertwo>
+		<winner>Kevin</winner>
+		<turns>37</turns>
+		<date>6/13/2016</date>
+	</game>
+</all>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Gamelist</title>
+<style>
+table,th,td {
+  border : 1px solid black;
+  border-collapse: collapse;
+}
+th,td {
+  padding: 5px;
+}
+</style>
+</head>
+<body>
+<h1>Here is a list of games played by AIs</h1>
+<h2>Game playback will be available soon!</h2>
+<table id="info">
+</table>
+<script>
+
+  var xmlhttp = new XMLHttpRequest();
+  xmlhttp.onreadystatechange = function() {
+    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+      myFunction(xmlhttp);
+    }
+  };
+  xmlhttp.open("GET", "gamelist.xml", true);
+  xmlhttp.send();
+
+function myFunction(xml) {
+  var i;
+  var xmlDoc = xml.responseXML;
+  var table="<tr><th>Player One</th><th>Player Two</th><th>Winner</th><th>Turns Taken</th><th>Date Played</th></tr>";
+  var x = xmlDoc.getElementsByTagName("game");
+  for (i = x.length - 1; i >= 0; i--) { 
+    table += "<tr><td>" +
+    x[i].getElementsByTagName("playerone")[0].childNodes[0].nodeValue +
+    "</td><td>" +
+    x[i].getElementsByTagName("playertwo")[0].childNodes[0].nodeValue +
+    "</td><td>" +
+    x[i].getElementsByTagName("winner")[0].childNodes[0].nodeValue +
+    "</td><td>" +
+    x[i].getElementsByTagName("turns")[0].childNodes[0].nodeValue +
+    "</td><td>" +
+    x[i].getElementsByTagName("date")[0].childNodes[0].nodeValue +
+    "</td></tr>";
+  }
+  document.getElementById("info").innerHTML = table;
+}
+</script>
+</body>
+</html>

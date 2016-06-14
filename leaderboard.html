@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Leaderboard</title>
+<style>
+table,th,td {
+  border : 1px solid black;
+  border-collapse: collapse;
+}
+th,td {
+  padding: 5px;
+}
+</style>
+</head>
+<body>
+<h1>Leaderboard</h1>
+<table id="info">
+</table>
+<script>
+  var xmlhttp = new XMLHttpRequest();
+  xmlhttp.onreadystatechange = function() {
+    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+      myFunction(xmlhttp);
+    }
+  };
+  xmlhttp.open("GET", "leaderboard.xml", true);
+  xmlhttp.send();
+
+function myFunction(xml) {
+  var i;
+  var xmlDoc = xml.responseXML;
+  var table="<tr><th>Player</th><th>Rank</th><th>ELO</th></tr>";
+  var x = xmlDoc.getElementsByTagName("player");
+  for (i = 0; i < x.length; i++) { 
+    table += "<tr><td>" +
+    x[i].getElementsByTagName("name")[0].childNodes[0].nodeValue +
+    "</td><td>" +
+    x[i].getElementsByTagName("rank")[0].childNodes[0].nodeValue +
+    "</td><td>" +
+    x[i].getElementsByTagName("elo")[0].childNodes[0].nodeValue +
+    "</td></tr>";
+  }
+  document.getElementById("info").innerHTML = table;
+}
+</script>
+</body>
+</html>
