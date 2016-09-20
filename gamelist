@@ -25,13 +25,13 @@ th,td {
       myFunction(xmlhttp);
     }
   };
-  xmlhttp.open("GET", "gamelist.xml", true);
+  xmlhttp.open("GET", "games.xml", true);
   xmlhttp.send();
 
 function myFunction(xml) {
   var i;
   var xmlDoc = xml.responseXML;
-  var table="<tr><th>Player One</th><th>Player Two</th><th>Winner</th><th>Turns Taken</th><th>Date Played</th></tr>";
+  var table="<tr><th>Player One</th><th>Player Two</th><th>Winner</th><th>Date Played</th></tr>";
   var x = xmlDoc.getElementsByTagName("game");
   for (i = x.length - 1; i >= 0; i--) { 
     table += "<tr><td>" +
@@ -40,8 +40,6 @@ function myFunction(xml) {
     x[i].getElementsByTagName("playertwo")[0].childNodes[0].nodeValue +
     "</td><td>" +
     x[i].getElementsByTagName("winner")[0].childNodes[0].nodeValue +
-    "</td><td>" +
-    x[i].getElementsByTagName("turns")[0].childNodes[0].nodeValue +
     "</td><td>" +
     x[i].getElementsByTagName("date")[0].childNodes[0].nodeValue +
     "</td></tr>";

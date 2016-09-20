@@ -29,15 +29,13 @@ th,td {
 function myFunction(xml) {
   var i;
   var xmlDoc = xml.responseXML;
-  var table="<tr><th>Player</th><th>Rank</th><th>ELO</th></tr>";
+  var table="<tr><th>Player</th><th>Rank</th></tr>";
   var x = xmlDoc.getElementsByTagName("player");
   for (i = 0; i < x.length; i++) { 
     table += "<tr><td>" +
     x[i].getElementsByTagName("name")[0].childNodes[0].nodeValue +
     "</td><td>" +
     x[i].getElementsByTagName("rank")[0].childNodes[0].nodeValue +
-    "</td><td>" +
-    x[i].getElementsByTagName("elo")[0].childNodes[0].nodeValue +
     "</td></tr>";
   }
   document.getElementById("info").innerHTML = table;

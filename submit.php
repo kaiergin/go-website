@@ -3,7 +3,7 @@
 # Make else statements
 
 $canUpload = 1;
-$target_dir = "/home/ec2-user/NewAIs/";
+$target_dir = "NewAIs/";
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 $fileType = pathinfo($target_file,PATHINFO_EXTENSION);
 $name = $_POST["ainame"];
@@ -20,7 +20,7 @@ if ($_FILES["fileToUpload"]["size"] > 1000000) {
 	canUpload = 0;
 	echo "too big";
 }
-$xml=simplexml_load_file("/home/ec2-user/users.xml") or die("Error: Cannot create object");
+$xml=simplexml_load_file("users.xml") or die("Error: Cannot create object");
 $isThere = False;
 for ($i=0,$i<count($xml->player),$i++) {
 	if ($xml->player[$i]->username == $name && $xml->player[$i]->password == $pass) {

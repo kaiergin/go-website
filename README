@@ -1,0 +1,7 @@
+Go AI Competition Website
+
+index - home page
+leaderboard - displays current leaderboard based off of leaderboard.xml
+upload - place where AIs are uploaded
+gamelist - list of all games AIs have played w/ info from gamelist.xml
+info - about AI competition
